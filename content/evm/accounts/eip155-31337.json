@@ -1,0 +1,28 @@
+{
+  "profile": "org.emsenn.evm.sovereign-enterprise-account.v3",
+  "enterprise": {
+    "nodeId": "improvement-game-proposal-assay",
+    "urn": "urn:ame:improvement-game-proposal-assay",
+    "enterpriseId": "0x283130b252d1a4d6dbb559424a4f04432b222e32441414fdccde892a0d62ccbb"
+  },
+  "chain": {
+    "chainId": 31337,
+    "caip2": "eip155:31337"
+  },
+  "account": {
+    "address": "0x2acfca70195aef46c3d7c1c63c66e08a3313e8e4",
+    "caip10": "eip155:31337:0x2acfca70195aef46c3d7c1c63c66e08a3313e8e4"
+  },
+  "factory": {
+    "address": "0x7bf3cf1176c4a037d3ea2a5ff3d480359ac65ecd",
+    "userSalt": "0x8c97b5705eb5cdf793fdf18638e6ab031076094ba4b878db964d6d12e8ee145a"
+  },
+  "policy": {
+    "signer": "0x05723b57b6e1ba5e76a85a177532a2dc070b774c",
+    "custody": "settlement-private"
+  },
+  "deployment": {
+    "transaction": "0xad8c6c5a1ac6867b830eae2bf3a9ae48e3cdb41087a204363e5c327dd365bc3d",
+    "block": 1521
+  }
+}

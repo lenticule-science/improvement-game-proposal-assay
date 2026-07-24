@@ -1,0 +1,163 @@
+{
+  "name": "Improvement Game Proposal Assay",
+  "description": "Independently assays protected-oracle improvement game proposals without inference or filesystem authority.",
+  "supportedInterfaces": [
+    {
+      "url": "${BASE_URL}/a2a/jsonrpc",
+      "protocolBinding": "JSONRPC",
+      "tenant": "",
+      "protocolVersion": "1.0"
+    },
+    {
+      "url": "${BASE_URL}/a2a/rest",
+      "protocolBinding": "HTTP+JSON",
+      "tenant": "",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "url": "https://emsenn.net/",
+    "organization": "Obsmetrological Services Section"
+  },
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extensions": [
+      {
+        "uri": "ni:///sha-256;wzh-zYeFQCsh4zAzGS34uacNV4qJeIEmCKIUUWyRZ-M",
+        "description": "Sovereign recursive circuit interface",
+        "required": true,
+        "params": {
+          "profile": "org.emsenn.rmn.sovereign-circuit-interface.v1",
+          "account": "eip155:31337:0x2acfca70195aef46c3d7c1c63c66e08a3313e8e4",
+          "authority": "ni:///sha-256;FQetRZG0OlynqJh62Dtfln3fcmw6R1wPEpuLE_poO44",
+          "custody": "ni:///sha-256;b-GpOT9gxOQ_llJf9n0rFEXf5z5xDMEHvwvn1TPIx5k",
+          "territory": "ni:///sha-256;x1z8a85Pim_EHsEeEg1WU7IK_NDlZf7593NSxUiEJq4",
+          "component": {
+            "profile": "org.emsenn.rmn.hierarchical-circuit.v3",
+            "law": "ni:///sha-256;s469yJBFE3RZ-z8JZdhzVV4SYg8iJZ63PjIAoAZNdNE",
+            "ports": [
+              {
+                "name": "request",
+                "direction": "input",
+                "predicate": "ni:///sha-256;PsfnbUoDuZ8Ok0TWwGH4Uw0ovoHjICC4KfmKfQ9mQ8A",
+                "carrier": "ni:///sha-256;IyUh6cT2QUgbg1bx5YHIIQ081Sy1DgzOdUelf_lZZNw",
+                "mode": "tensor"
+              },
+              {
+                "name": "review",
+                "direction": "output",
+                "predicate": "ni:///sha-256;PsfnbUoDuZ8Ok0TWwGH4Uw0ovoHjICC4KfmKfQ9mQ8A",
+                "carrier": "ni:///sha-256;IyUh6cT2QUgbg1bx5YHIIQ081Sy1DgzOdUelf_lZZNw",
+                "mode": "tensor"
+              }
+            ],
+            "instances": [],
+            "nets": [],
+            "behavior": {
+              "factors": [
+                {
+                  "inputs": [
+                    "request"
+                  ],
+                  "outputs": [
+                    "review"
+                  ],
+                  "rows": [
+                    {
+                      "input": [
+                        {
+                          "positiveEvidence": false,
+                          "negativeEvidence": false
+                        }
+                      ],
+                      "output": [
+                        {
+                          "positiveEvidence": false,
+                          "negativeEvidence": false
+                        }
+                      ]
+                    },
+                    {
+                      "input": [
+                        {
+                          "positiveEvidence": true,
+                          "negativeEvidence": false
+                        }
+                      ],
+                      "output": [
+                        {
+                          "positiveEvidence": true,
+                          "negativeEvidence": false
+                        }
+                      ]
+                    },
+                    {
+                      "input": [
+                        {
+                          "positiveEvidence": false,
+                          "negativeEvidence": true
+                        }
+                      ],
+                      "output": [
+                        {
+                          "positiveEvidence": false,
+                          "negativeEvidence": true
+                        }
+                      ]
+                    },
+                    {
+                      "input": [
+                        {
+                          "positiveEvidence": true,
+                          "negativeEvidence": true
+                        }
+                      ],
+                      "output": [
+                        {
+                          "positiveEvidence": true,
+                          "negativeEvidence": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "extendedAgentCard": false
+  },
+  "securitySchemes": {},
+  "securityRequirements": [],
+  "defaultInputModes": [
+    "application/rmn+cbor"
+  ],
+  "defaultOutputModes": [
+    "application/rmn+cbor"
+  ],
+  "skills": [
+    {
+      "id": "assay-improvement-game-proposal",
+      "name": "Assay improvement game proposal",
+      "description": "Verify exact source, territory, oracle, and economy relations.",
+      "tags": [
+        "assay",
+        "market",
+        "rmn"
+      ],
+      "examples": [],
+      "inputModes": [
+        "application/rmn+cbor"
+      ],
+      "outputModes": [
+        "application/rmn+cbor"
+      ],
+      "securityRequirements": []
+    }
+  ],
+  "signatures": []
+}

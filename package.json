@@ -1,0 +1,52 @@
+{
+  "name": "@emsenn/improvement-game-proposal-assay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent zero-inference assay for protected-oracle improvement game proposals.",
+  "exports": {
+    ".": "./src/client.mjs",
+    "./client": "./src/client.mjs",
+    "./executor": "./src/a2a-executor.mjs"
+  },
+  "bin": {
+    "execute-improvement-game-proposal-assay-a2a-message": "bin/execute-a2a-message.mjs",
+    "serve-improvement-game-proposal-assay-a2a": "bin/serve-a2a.mjs"
+  },
+  "scripts": {
+    "check": "node --check src/assay.mjs && node --check src/client.mjs && node --check src/a2a-executor.mjs && node --check bin/execute-a2a-message.mjs && node --check bin/serve-a2a.mjs",
+    "test": "node --test",
+    "verify": "npm run check && npm test"
+  },
+  "dependencies": {
+    "@a2a-js/sdk": "1.0.0-beta.0",
+    "@emsenn/a2a-contracted-agent-service": "file:../../../../../red-cup-engineering/services/web-services-section/services/a2a-services-section/services/a2a-contracted-agent-service",
+    "@emsenn/a2a-rmn-part-service": "file:../../../../../red-cup-engineering/services/web-services-section/services/a2a-services-section/services/a2a-rmn-part-service",
+    "@emsenn/a2a-rmn-task-client-service": "file:../../../../../red-cup-engineering/services/web-services-section/services/a2a-services-section/services/a2a-rmn-task-client-service",
+    "@emsenn/rmn-semantic-conformance": "file:../rmn-semantic-conformance",
+    "@emsenn/rwil-rdf-services": "file:../rwil-rdf-services"
+  },
+  "x-agentic-metro-enterprise": {
+    "node-id": "improvement-game-proposal-assay",
+    "actor": "urn:ame:improvement-game-proposal-assay",
+    "organizational-kind": "micro-enterprise",
+    "owners": [
+      "obsmetrological-services-section"
+    ],
+    "admission": "one provider-addressed canonical RMN proposal assay through the hired A2A 1.0 provider",
+    "refusal": "filesystem authority, inference, customer mutation, usefulness decision, or unprotected oracle",
+    "operation-catalog": {
+      "assay-improvement-game-proposal": {
+        "contract": "ni:///sha-256;s469yJBFE3RZ-z8JZdhzVV4SYg8iJZ63PjIAoAZNdNE",
+        "protocols": [
+          "RMN",
+          "A2A 1.0"
+        ],
+        "accepts": "ImprovementGameProposalAssayOperation",
+        "returns": "ImprovementGameProposalAssayResult|Reject",
+        "timeoutMs": 5000,
+        "legacyCompatibility": false
+      }
+    }
+  }
+}
