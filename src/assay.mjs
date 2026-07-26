@@ -24,6 +24,5 @@ function problem(lot, proposal) {
 
 export function assayImprovementGameProposal(request) {
   const issue = request?.type === "ImprovementGameProposalAssayRequest" ? problem(request.lot, request.proposal) : "exact-assay-request-required";
-  return record({ type: "ImprovementGameReview", actor: ACTOR, proposal: request?.proposal?.id ?? null, accepted: issue === null, reason: issue ?? "deterministic source, territory, oracle, and economy relations are bounded", evidence: { assay: "improvement-game-proposal-assay/v1", inferenceCalls: 0, filesystemReads: 0 }, authorExcluded: true, customerMutation: false });
+  return record({ type: "ImprovementGameReview", actor: ACTOR, proposal: request?.proposal?.id ?? null, accepted: issue === null, reason: issue ?? "deterministic source, territory, oracle, and economy relations are bounded", evidence: { assay: "improvement-game-proposal-assay/v1", inferenceCalls: 0, filesystemReads: 0 }, customerMutation: false });
 }
-
