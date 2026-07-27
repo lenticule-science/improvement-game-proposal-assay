@@ -1,6 +1,6 @@
 import { isAbsolute } from "node:path";
-import { semanticId } from "@emsenn/rmn-semantic-conformance";
-import { relationalRwilDocument } from "@emsenn/rwil-rdf-services/client";
+import { semanticId } from "@red-cup-engineering/rmn-semantic-conformance";
+import { relationalRwilDocument } from "@lenticule-science/rwil-rdf-projection-service/client";
 
 export const ACTOR = "urn:ame:improvement-game-proposal-assay";
 export function record(body) { return Object.freeze({ id: semanticId(relationalRwilDocument(body)), ...body }); }

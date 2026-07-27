@@ -1,8 +1,8 @@
 import { Message, Role } from "@a2a-js/sdk";
-import { extractRmnPart, rmnPart } from "@emsenn/a2a-rmn-part-service";
-import { decodeSemantic, semanticBytes, semanticId } from "@emsenn/rmn-semantic-conformance";
-import { decodeRelationalValue } from "@emsenn/rmn-semantic-conformance/relational-value";
-import { relationalRwilDocument } from "@emsenn/rwil-rdf-services/client";
+import { extractRmnPart, rmnPart } from "@red-cup-engineering/a2a-rmn-part-service";
+import { decodeSemantic, semanticBytes, semanticId } from "@red-cup-engineering/rmn-semantic-conformance";
+import { decodeRelationalValue } from "@red-cup-engineering/rmn-semantic-conformance/relational-value";
+import { relationalRwilDocument } from "@lenticule-science/rwil-rdf-projection-service/client";
 import { ACTOR, assayImprovementGameProposal } from "./assay.mjs";
 const id=(value)=>semanticId(relationalRwilDocument(value)),record=(body)=>Object.freeze({id:id(body),...body});
 const exact=(value)=>value?.id===id(Object.fromEntries(Object.entries(value??{}).filter(([key])=>key!=="id")));
