@@ -1,6 +1,6 @@
 {
   "name": "Improvement Game Proposal Assay",
-  "description": "Independently assays protected-oracle improvement game proposals without inference or filesystem authority.",
+  "description": "Assays protected-oracle improvement game proposals with exact attribution and replay evidence, without inference or filesystem authority; producer identity neither proves nor disproves correctness.",
   "supportedInterfaces": [
     {
       "url": "${BASE_URL}/a2a/jsonrpc",

@@ -23,47 +23,7 @@
     "@red-cup-engineering/a2a-contracted-agent-service": "2.0.4",
     "@red-cup-engineering/a2a-rmn-part-service": "1.0.0",
     "@red-cup-engineering/a2a-rmn-task-client-service": "1.1.0",
-    "@red-cup-engineering/rmn-semantic-conformance": "6.0.0",
+    "@red-cup-engineering/rmn-semantic-conformance": "6.0.1",
     "@lenticule-science/rwil-rdf-projection-service": "1.0.2"
-  },
-  "x-agentic-metro-enterprise": {
-    "node-id": "improvement-game-proposal-assay",
-    "actor": "urn:ame:improvement-game-proposal-assay",
-    "organizational-kind": "micro-enterprise",
-    "owners": [
-      "obsmetrological-services-section"
-    ],
-    "admission": "one provider-addressed canonical RMN proposal assay through the hired A2A 1.0 provider",
-    "refusal": "filesystem authority, inference, customer mutation, usefulness decision, or unprotected oracle",
-    "operation-catalog": {
-      "assay-improvement-game-proposal": {
-        "contract": "ni:///sha-256;s469yJBFE3RZ-z8JZdhzVV4SYg8iJZ63PjIAoAZNdNE",
-        "protocols": [
-          "RMN",
-          "A2A 1.0"
-        ],
-        "accepts": "ImprovementGameProposalAssayOperation",
-        "returns": "ImprovementGameProposalAssayResult|Reject",
-        "legacyCompatibility": false
-      }
-    }
-  },
-  "x-semiotic-voxel": {
-    "profile": "org.harmonious-union.semiotic-voxel.v1",
-    "owner": "lenticule-science",
-    "kind": "actor",
-    "actor": "urn:ame:improvement-game-proposal-assay",
-    "operations": [
-      "assay-improvement-game-proposal"
-    ],
-    "capabilities": [
-      {
-        "capability": "improvement-game-proposal-assay",
-        "faces": [
-          "assay-improvement-game-proposal"
-        ]
-      }
-    ],
-    "package": "@lenticule-science/improvement-game-proposal-assay"
   }
 }
