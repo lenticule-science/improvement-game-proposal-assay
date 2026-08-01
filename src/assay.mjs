@@ -1,15 +1,15 @@
 import { isAbsolute } from "node:path";
 import { semanticId } from "@red-cup-engineering/rmn-semantic-conformance";
-import { relationalRwilDocument } from "@lenticule-science/witness-journal-rdf-projection-service/client";
+import { relationalWitnessJournalDocument } from "@lenticule-science/witness-journal-rdf-projection-service/client";
 
 export const ACTOR = "urn:ame:improvement-game-proposal-assay";
-export function record(body) { return Object.freeze({ id: semanticId(relationalRwilDocument(body)), ...body }); }
+export function record(body) { return Object.freeze({ id: semanticId(relationalWitnessJournalDocument(body)), ...body }); }
 const rootedAt = (path, root) => path === root || path.startsWith(`${root}/`);
 const digest = (value) => typeof value === "string" && /^sha256:[0-9a-f]{64}$/u.test(value);
 function problem(lot, proposal) {
   const residue = proposal?.proposedResidue, observation = lot?.sourceObservation, protectedPaths = new Set(residue?.acceptanceArtifacts?.map(({ path }) => path) ?? []);
   if (lot?.type !== "ImprovementGameDesignWorkLot" || proposal?.type !== "ImprovementGameProposal" || proposal.lot !== lot.id || proposal.verdict !== "propose-game" || proposal.customerMutation !== false) return "proposal-lot-binding";
-  if (proposal.id !== semanticId(relationalRwilDocument(Object.fromEntries(Object.entries(proposal).filter(([key]) => key !== "id"))))) return "proposal-identity";
+  if (proposal.id !== semanticId(relationalWitnessJournalDocument(Object.fromEntries(Object.entries(proposal).filter(([key]) => key !== "id"))))) return "proposal-identity";
   if (residue?.type !== "ImprovementResidue" || residue.customer !== lot.consumer || residue.territory !== lot.gameTerms?.territory || !isAbsolute(residue.territory ?? "")) return "customer-territory-binding";
   if (!Array.isArray(residue.sourceDigests) || residue.sourceDigests.some((item) => !digest(item)) || observation.sourceDigests.some((item) => !residue.sourceDigests.includes(item))) return "source-binding";
   if (!Array.isArray(residue.ownedTargetRoots) || !residue.ownedTargetRoots.length || !Array.isArray(residue.acceptanceArtifacts) || !residue.acceptanceArtifacts.length || protectedPaths.size !== residue.acceptanceArtifacts.length) return "protected-oracle-absent";
